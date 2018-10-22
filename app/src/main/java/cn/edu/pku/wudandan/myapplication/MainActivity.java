@@ -157,6 +157,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private TodayWeather parseXML(String xmldate) {
         /**/
+        TodayWeather todayWeather = null;
         int fengxiangCount = 0;
         int fengliCount = 0;
         int dateCount = 0;
@@ -178,7 +179,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         // 判断当前事件是否为标签元素开始事件
                         case XmlPullParser.START_TAG:
                             if(xmlPullParser.getName().equals("resp" )){
-                                todayWeather = new TodayWeather();
+                                 todayWeather = new TodayWeather();
                             }
                             if (todayWeather != null) {
                             if (xmlPullParser.getName().equals(" city")) {
